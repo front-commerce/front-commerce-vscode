@@ -1,0 +1,17 @@
+{
+  "Add deprecation warning": {
+    "scope": "javascript",
+    "prefix": "depd",
+    "body": [
+      "const deprecated = require(\"depd\")(\"$1\");",
+      "const newModule = require(\"$2\");",
+      "",
+      "deprecated(",
+      "\"Will be removed in $3. Please update your code to import `$2` instead.\"",
+      ");",
+      "",
+      "module.exports = newModule;"
+    ],
+    "description": "Add a deprecation warning using `depd`"
+  }
+}
