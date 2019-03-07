@@ -13,5 +13,33 @@
       "module.exports = newModule;"
     ],
     "description": "Add a deprecation warning using `depd`"
+  },
+  "Front-Commerce: GraphQL Module Definition (Magento2)": {
+    "scope": "javascript",
+    "prefix": "fcgqlm2module",
+    "description": "Create a GraphQL Module Definition for a standard Magento2 module",
+    "body": [
+      "import { makeUserClientFromRequest",
+      "} from \"server/modules/magento2/core/factories\";",
+      "import typeDefs from \"./schema.gql\";",
+      "import resolvers from \"./resolvers\";",
+      "import $1Loader from \"./loader\";",
+      "",
+      "export default {",
+      "namespace: \"$2/$1\",",
+      "typeDefs,",
+      "resolvers,",
+      "contextEnhancer: ({ req, makeDataLoader, config",
+      "}) => {",
+      "const axiosInstance = makeUserClientFromRequest(",
+      "config.magentoEndpoint,",
+      "req",
+      ");",
+      "return {",
+      "$1: $1Loader(makeDataLoader)(axiosInstance)",
+      "};",
+      "}",
+      "};"
+    ]
   }
 }
