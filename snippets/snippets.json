@@ -41,5 +41,17 @@
       "}",
       "};"
     ]
+  },
+  "Front-Commerce: contextEnhancer (GraphQL Module Definition)": {
+    "scope": "javascript",
+    "prefix": "fcctxenhancer",
+    "description": "Create a `contextEnhancer` function for GraphQL Module Definition",
+    "body": [
+      "contextEnhancer: ({ req, makeDataLoader, config }) => {",
+      "\treturn {",
+      "\t\t$1: $2",
+      "\t};",
+      "}"
+    ]
   }
 }
